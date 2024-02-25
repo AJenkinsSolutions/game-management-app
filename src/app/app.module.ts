@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { GameReducer } from './games/game.reducer';
+import { GameListComponent } from './game-list/game-list.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,3 +24,4 @@ import { GameReducer } from './games/game.reducer';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+``
