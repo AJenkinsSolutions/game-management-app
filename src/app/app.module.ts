@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { GameReducer } from './games/game.reducer';
 import { GameListComponent } from './game-list/game-list.component';
+import { AppState } from './app.state';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { GameListComponent } from './game-list/game-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({game : GameReducer})
+    StoreModule.forRoot<AppState>({game : GameReducer})
     
   ],
   providers: [],

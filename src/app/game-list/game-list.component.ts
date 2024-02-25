@@ -3,6 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { AddGame, RemoveGame } from '../games/game.actions';
 import { Game } from '../models/game';
 import { Observable } from 'rxjs';
+import { AppState } from '../app.state';
 
 
 
@@ -15,10 +16,10 @@ export class GameListComponent {
 
   games$: Observable<Game[]>; 
 
-  constructor(private store: Store<{games: Game[]}>){
+  constructor(private store: Store<AppState>){
 
     //initalizing the games Obersvable with the games [] from the store
-    this.games$ = this.store.pipe(select('games'));
+    this.games$ = this.store.pipe(select('game'));
   }
 
 
