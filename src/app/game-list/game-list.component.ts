@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AddGame, RemoveGame } from '../games/game.actions';
 import { Game } from '../models/game';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -11,7 +13,13 @@ import { Game } from '../models/game';
 })
 export class GameListComponent {
 
-  constructor(private store: Store){}
+  games$: Observable<Game[]>; 
+
+  constructor(private store: Store<{games: Game[]}>){
+
+    //initalizing the games Obersvable with the games [] from the store
+    this.games$ = this.store.pipe(select('games'));
+  }
 
 
   //This our component method for our game action 'addGame'
