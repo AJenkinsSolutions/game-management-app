@@ -14,6 +14,7 @@ import { AppState } from '../app.state';
 })
 export class GameListComponent {
 
+
   games$: Observable<Game[]>; 
 
   constructor(private store: Store<AppState>){

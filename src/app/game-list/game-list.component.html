@@ -1,3 +1,22 @@
-<p>Entered into game-list</p>
+<p>Games</p>
+
+
+<div *ngFor="let obj of games$ |async">
+
+    <h2> {{obj.title}}</h2>
+    <h2> {{obj.publisher}}</h2>
+    <button (click)="removeGame(obj.id)">Remove Game</button>
+
+</div>
+
+<h2>Add a game </h2>
+
+
+<div>
+    <input #gameId type="text " placeholder="id">
+    <input #gameTitle type="text" placeholder="title">
+    <input #gamePub type="text" placeholder="publisher">
+    <button type="submit" (click)="addGame(gameId.value, gameTitle.value, gamePub.value)">add game</button>
+</div>
 
 
